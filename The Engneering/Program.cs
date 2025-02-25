@@ -1,3 +1,4 @@
+
 namespace The_Engneering
 {
     public class Program
@@ -29,10 +30,11 @@ namespace The_Engneering
             }
 
             app.UseCors(MyAllowSpecificOrigins);
-            //app.UseHttpsRedirection();
-
+            app.UseHttpsRedirection();
+            
             app.UseAuthorization();
-            //app.UseStaticFiles();
+            //app.UseWebSockets();
+            //app.MapHub<NotificationHub>("/notificationHub");
             app.MapControllers();
 
             app.Run();

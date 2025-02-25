@@ -1,6 +1,7 @@
 ﻿using Mapster;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using System.Drawing;
 using System.Drawing.Printing;
 using The_Engneering.Contracts.Bill;
@@ -16,14 +17,14 @@ public class BillsController(IBillService _billService, ApplicationDbContext _co
     private readonly ApplicationDbContext context = _context;
 
     [HttpGet("")]
-    public async Task<ActionResult<IEnumerable<Product>>> GetProducts(CancellationToken cancellationToken)
+    public async Task<ActionResult<IEnumerable<Product>>> GetBills(CancellationToken cancellationToken)
     {
         var polls = await billService.GetAllAsync(cancellationToken);
         return Ok(polls.Adapt<IEnumerable<BillResponse>>());
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Product>> GetProduct([FromRoute]string id, CancellationToken cancellationToken)
+    public async Task<ActionResult<Product>> GetBill([FromRoute]string id, CancellationToken cancellationToken)
     {
         var bill = await billService.GetAsync(id, cancellationToken);
         if (bill == null)
@@ -36,7 +37,8 @@ public class BillsController(IBillService _billService, ApplicationDbContext _co
     public async Task<IActionResult> AddBill([FromRoute] int id, [FromBody] BillRequest request, CancellationToken cancellationToken)
     {
         var bill = await billService.AddAsync(id, request.Adapt<Bill>(), cancellationToken);
-        return Created();
+        //await _hubContext.Clients.All.SendAsync("ReceiveNotification", "تمت إضافة فاتورة جديدة!");
+        return CreatedAtAction(nameof(GetBill), new { id = bill.Id }, bill);
     }
 
     [HttpPut("{id}")]
@@ -75,7 +77,7 @@ public class BillsController(IBillService _billService, ApplicationDbContext _co
         PrintDocument printDoc = new PrintDocument();
         printDoc.PrintPage += (sender, e) => PrintPage(e, bill);
         printDoc.Print();
-        printDoc.Print();
+        //printDoc.Print();
 
         return Ok("Bill sent to printer successfully.");
     }
@@ -86,20 +88,20 @@ public class BillsController(IBillService _billService, ApplicationDbContext _co
         Font headerFont = new Font("Arial", 14, FontStyle.Bold);
         Font contentFont = new Font("Arial", 12);
         float pageWidth = e.PageBounds.Width;
-        float margin = 100;
+        float margin = 335;
         float yPos = 100;
 
         // رسم خط علوي
-        e.Graphics.DrawLine(Pens.Black, margin, yPos, pageWidth - margin, yPos);
+        e.Graphics.DrawLine(Pens.Black, 100, yPos, pageWidth - 100, yPos);
         yPos += 20;
 
         // طباعة العنوان الرئيسي في المنتصف
         StringFormat centerAlign = new StringFormat { Alignment = StringAlignment.Center };
-        e.Graphics.DrawString("الـــــمـــــهــــــنــــــدس", titleFont, Brushes.Black, new PointF(pageWidth / 2, yPos), centerAlign);
+        e.Graphics.DrawString("الــــــمـــــهــــــنــــــدس", titleFont, Brushes.Black, new PointF(pageWidth / 2, yPos), centerAlign);
         yPos += 40;
 
         // رسم خط أسفل العنوان
-        e.Graphics.DrawLine(Pens.Black, margin, yPos, pageWidth - margin, yPos);
+        e.Graphics.DrawLine(Pens.Black, 100, yPos, pageWidth - 100, yPos);
         yPos += 20;
 
         // إعداد المحاذاة لليمين
@@ -126,18 +128,39 @@ public class BillsController(IBillService _billService, ApplicationDbContext _co
         foreach (var item in billData)
         {
             e.Graphics.DrawString(item.Label, headerFont, Brushes.Black, new PointF(labelX, yPos), rightAlign);
-            e.Graphics.DrawString(":", headerFont, Brushes.Black, new PointF(colonX, yPos), rightAlign);
+            e.Graphics.DrawString(" : ", headerFont, Brushes.Black, new PointF(colonX, yPos), rightAlign);
             e.Graphics.DrawString(item.Value, contentFont, Brushes.Black, new PointF(valueX, yPos));
             yPos += 30;
         }
 
         // رسم خط قبل رسالة الشكر
         yPos += 20;
-        e.Graphics.DrawLine(Pens.Black, margin, yPos, pageWidth - margin, yPos);
+        e.Graphics.DrawLine(Pens.Black, 100, yPos, pageWidth - 100, yPos);
         yPos += 30;
 
         // طباعة رسالة الشكر في المنتصف
+        e.Graphics.DrawString("01126121268 - 01226121268 - 01026121268", new Font("Arial", 14, FontStyle.Italic), Brushes.Black, new PointF(pageWidth / 2, yPos), centerAlign);
+        yPos += 30;
         e.Graphics.DrawString("شكراً لثقتكم بنا", new Font("Arial", 14, FontStyle.Italic), Brushes.Black, new PointF(pageWidth / 2, yPos), centerAlign);
+        yPos += 30;
+        // Load image from file
+        string imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "logo.png");
+
+
+        Image billImage = Image.FromFile(imagePath);
+
+        // Ensure the image is loaded
+        if (billImage == null)
+        {
+            return;
+        }
+
+        // Draw the image on the bill
+        e.Graphics.DrawImage(billImage, new RectangleF(pageWidth / 2f - billImage.Width / 2f, yPos, billImage.Width, billImage.Height));
+
+        // Update yPos after adding the image
+        yPos += billImage.Height + 10;
+
     }
 }
 

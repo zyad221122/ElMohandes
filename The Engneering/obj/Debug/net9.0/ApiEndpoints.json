@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "The_Engneering.Controllers.BillsController",
-    "Method": "GetProducts",
+    "Method": "GetBills",
     "RelativePath": "api/Bills",
     "HttpMethod": "GET",
     "IsController": true,
@@ -21,7 +21,7 @@
   },
   {
     "ContainingType": "The_Engneering.Controllers.BillsController",
-    "Method": "GetProduct",
+    "Method": "GetBill",
     "RelativePath": "api/Bills/{id}",
     "HttpMethod": "GET",
     "IsController": true,

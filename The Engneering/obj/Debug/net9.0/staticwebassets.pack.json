@@ -69,6 +69,10 @@
       "PackagePath": "staticwebassets\\images\\fe8ffe7f-bd51-4dee-be93-8919a412678a.png"
     },
     {
+      "Id": "C:\\Users\\Benutzer1\\Desktop\\API Course\\Others\\Work\\The Engneering\\The Engneering\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.The Engneering.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

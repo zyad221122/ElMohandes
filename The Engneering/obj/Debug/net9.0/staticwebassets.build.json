@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TT7+5YtvJwDBvrFkmqU17941V0r9O668ukJt3kIImYQ=",
+  "Hash": "8iMoyOWszqp6Z5LY1FF0qLkGaNv2XIsKlUDkSjn1/GA=",
   "Source": "The Engneering",
   "BasePath": "_content/The Engneering",
   "Mode": "Default",
@@ -288,6 +288,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\fe8ffe7f-bd51-4dee-be93-8919a412678a.png"
+    },
+    {
+      "Identity": "C:\\Users\\Benutzer1\\Desktop\\API Course\\Others\\Work\\The Engneering\\The Engneering\\wwwroot\\images\\logo.png",
+      "SourceId": "The Engneering",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Benutzer1\\Desktop\\API Course\\Others\\Work\\The Engneering\\The Engneering\\wwwroot\\",
+      "BasePath": "_content/The Engneering",
+      "RelativePath": "images/logo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1bkr0pezr2",
+      "Integrity": "jUOGld7876hRGDTc5ByFFnzwS/dcpd+C88qtelHZqug=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logo.png"
     },
     {
       "Identity": "C:\\Users\\Benutzer1\\Desktop\\API Course\\Others\\Work\\The Engneering\\The Engneering\\wwwroot\\images\\Regular Expression.png",
@@ -1438,6 +1459,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-/SDxTScF7fmhl2KIODRR7bjwBInRYzB7RAlUPw0JxGA="
+        }
+      ]
+    },
+    {
+      "Route": "images/logo.1bkr0pezr2.png",
+      "AssetFile": "C:\\Users\\Benutzer1\\Desktop\\API Course\\Others\\Work\\The Engneering\\The Engneering\\wwwroot\\images\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2123"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jUOGld7876hRGDTc5ByFFnzwS/dcpd+C88qtelHZqug=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 08 Apr 2023 14:29:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1bkr0pezr2"
+        },
+        {
+          "Name": "label",
+          "Value": "images/logo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-jUOGld7876hRGDTc5ByFFnzwS/dcpd+C88qtelHZqug="
+        }
+      ]
+    },
+    {
+      "Route": "images/logo.png",
+      "AssetFile": "C:\\Users\\Benutzer1\\Desktop\\API Course\\Others\\Work\\The Engneering\\The Engneering\\wwwroot\\images\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2123"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jUOGld7876hRGDTc5ByFFnzwS/dcpd+C88qtelHZqug=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 08 Apr 2023 14:29:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-jUOGld7876hRGDTc5ByFFnzwS/dcpd+C88qtelHZqug="
         }
       ]
     },

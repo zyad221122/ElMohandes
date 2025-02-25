@@ -27,7 +27,7 @@ public static class DependencyInjection
 
         services.AddFluentValidationServices();
         services.AddAuthServices();
-
+        //services.AddSignalR();
         return services;
     }
     public static IServiceCollection AddFluentValidationServices(this IServiceCollection services) 

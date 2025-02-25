@@ -156,6 +156,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-/SDxTScF7fmhl2KIODRR7bjwBInRYzB7RAlUPw0JxGA="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"97130"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022/SDxTScF7fmhl2KIODRR7bjwBInRYzB7RAlUPw0JxGA=\u0022"},{"Name":"Last-Modified","Value":"Sat, 22 Feb 2025 15:28:56 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/The Engneering/images/logo.1bkr0pezr2.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\logo.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"1bkr0pezr2"},{"Name":"integrity","Value":"sha256-jUOGld7876hRGDTc5ByFFnzwS/dcpd\u002BC88qtelHZqug="},{"Name":"label","Value":"_content/The Engneering/images/logo.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2123"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022jUOGld7876hRGDTc5ByFFnzwS/dcpd\u002BC88qtelHZqug=\u0022"},{"Name":"Last-Modified","Value":"Sat, 08 Apr 2023 14:29:34 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/The Engneering/images/logo.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\logo.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-jUOGld7876hRGDTc5ByFFnzwS/dcpd\u002BC88qtelHZqug="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"2123"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022jUOGld7876hRGDTc5ByFFnzwS/dcpd\u002BC88qtelHZqug=\u0022"},{"Name":"Last-Modified","Value":"Sat, 08 Apr 2023 14:29:34 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/The Engneering/images/Regular Expression.irc49od080.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\Regular Expression.png'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
